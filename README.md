@@ -54,7 +54,6 @@ There are no packages available for installation
 使用说明：BracketHighlighter插件是用来匹配相对的符号，然后高亮显示，比如{ }、[ ]、" "等符号的对应高亮显
 
 4. ConvertToUTF8
-
 使用说明：自动转为UTF-8编码类型
 
 5. DeleteBlankLines（安装不成功。。。。。。）
@@ -88,7 +87,7 @@ Emmet用法参见Emmet插件使用方法总结
 13. SublimeCodeInte
 使用说明：Sublime​Code​Intel 是一个代码提示、补全插件，支持 JavaScript、Mason、XBL、XUL、RHTML、SCSS、Python、HTML、Ruby、Python3、XML、Sass、XSLT、Django、HTML5、Perl、CSS、Twig、Less、Smarty、Node.js、Tcl、TemplateToolkit 和 PHP 等语言，是 Sublime Text 自带代码提示功能的很好扩展。
 
-14. sublime tmpl
+14. sublime tmpl ---------教需要
 使用说明：按指定快捷键生成模板。
 快捷键：
 ctrl+alt+h 新建html模板文件
