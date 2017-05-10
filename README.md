@@ -4,6 +4,9 @@
 
 SublimeText3常用插件及快捷键总结
 
+删除插件，Ctrl+Shift+P调出命令面板，输入remove，调出Remove Package选项并回车，选择要删除的插件即可
+更新插件，upgrade packages，
+
 NO.1 下载安装
 点击进入sublime官网,根据自己的电脑系统下载相应的版本
 将下载的压缩包解压后直接放进你要安装的文件夹，双击sublime_text.exe即可运行
@@ -134,6 +137,15 @@ ctrl+alt+shift+p 新建python模板文件
 
 20. OmniMarkupPreviewer
 使用说明：用来在浏览器中预览markdown 编辑的效果 快捷键：ctrl+alt+o
+
+21. ColorPicker 
+使用说明：获取颜色，即打开调色板 快捷键都是ctrl+shift+c
+但是有时会和ConvertToUTF8冲突
+打开Sublime Text --> Preferences --> Browse Packages，找到其中想要修改快捷键的文件夹并进入，找到对应操作系统的Default.sublime-keymap文件，修改快捷键
+
+22. Can I Use
+使用说明：可以直接调整到caniuse看到当前属性的浏览器支持情况
+
 
 手动安装的插件介绍
 
