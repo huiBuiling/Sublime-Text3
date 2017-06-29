@@ -153,6 +153,9 @@ ctrl+alt+shift+p 新建python模板文件
 打开.js, .jsx 后缀的文件
 打开菜单view->Syntax -> Open all with current extension as... -> Babel -> JavaScript (Babel)，选择babel为默认 javascript 打开syntax
 
+24.格式化代码
+由于sublime 已经自建了格式化按钮，我们只需为其设置快捷键
+reference  ->  Key Bindings -user -->{ "keys": ["ctrl+alt+f"], "command": "reindent" }
 
 
 手动安装的插件介绍
