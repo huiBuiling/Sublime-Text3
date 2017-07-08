@@ -146,7 +146,7 @@ ctrl+alt+shift+p 新建python模板文件
 22. Can I Use
 使用说明：可以直接调整到caniuse看到当前属性的浏览器支持情况
 
-23.babel-sublime
+23.babel
 使用说明：
 支持ES6， React.js, jsx代码高亮，对 JavaScript, jQuery 也有很好的扩展。
 设置：
