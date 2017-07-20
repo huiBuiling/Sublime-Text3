@@ -90,7 +90,7 @@ Emmet用法参见Emmet插件使用方法总结
 13. SublimeCodeInte
 使用说明：Sublime​Code​Intel 是一个代码提示、补全插件，支持 JavaScript、Mason、XBL、XUL、RHTML、SCSS、Python、HTML、Ruby、Python3、XML、Sass、XSLT、Django、HTML5、Perl、CSS、Twig、Less、Smarty、Node.js、Tcl、TemplateToolkit 和 PHP 等语言，是 Sublime Text 自带代码提示功能的很好扩展。
 
-14. sublime tmpl ---------教需要
+14. sublimeTmpl ---------教需要
 使用说明：按指定快捷键生成模板。
 快捷键：
 ctrl+alt+h 新建html模板文件
@@ -155,7 +155,7 @@ ctrl+alt+shift+p 新建python模板文件
 
 24.格式化代码
 由于sublime 已经自建了格式化按钮，我们只需为其设置快捷键
-reference  ->  Key Bindings -user -->{ "keys": ["ctrl+alt+f"], "command": "reindent" }
+preference  ->  Key Bindings -user -->{ "keys": ["ctrl+alt+f"], "command": "reindent" }
 
 
 手动安装的插件介绍
