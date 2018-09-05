@@ -46,39 +46,29 @@ There are no packages available for installation
 
 在线安装的插件介绍
 
-1. Alignment
+@x1. Alignment
 使用说明：Alignment是一个代码格式化插件，它可以使多行代码中的等号对齐，也可以调整多行代码为一个缩进级别。
 快捷键：ctrl+shift+alt+a
 
-2. AutoFileName
-使用说明：文件名自动补全
+2. AutoFileName(文件名自动补全)
 
-3. BracketHighlighter(需翻墙)
-使用说明：BracketHighlighter插件是用来匹配相对的符号，然后高亮显示，比如{ }、[ ]、" "等符号的对应高亮显
+@3. BracketHighlighter(需翻墙,用来匹配相对的符号，然后高亮显示，比如{ }、[ ]、" "等符号)
 
-4. ConvertToUTF8
-使用说明：自动转为UTF-8编码类型
+4. ConvertToUTF8(自动转为UTF-8编码类型)
 
 5. DeleteBlankLines（安装不成功。。。。。。）
 使用说明：选中需要批量删除空行的部分，Ctrl + Alt + Backspace，选中部分的所有空行就都被删除了
 快捷键：ctrl+alt+backspace
 
-6. DocBlockr
-使用说明：生成js ,php 等语言函数注释,只需要在函数上面输入/** ,然后按tab 就会自动生成注释
+6. DocBlockr(生成js ,php 等语言函数注释,只需要在函数上面输入/** ,然后按tab 就会自动生成注释)
 
-7. Emmet
-使用说明：它让编写 HTML 代码变得简单。
-Emmet用法参见Emmet插件使用方法总结
+7. Emmet(快速生成html头部信息 | html:4t, html:4s, html:xs, html:xt, html:xxs, html:5)
 
-8.HTML-CSS-JS Prettify(需翻墙)
-使用说明：快速格式化html css js
-快捷键：ctrl+shift+h
+8.HTML-CSS-JS Prettify(需翻墙,快速格式化html css js)-->ctrl+shift+h
 
-9. jQuery
-使用说明：会出现jquery提示
+9. jQuery(jquery提示)
 
-10. LESS
-使用说明：支持less语法高亮
+10. LESS(支持less语法高亮)
 
 11. Less2Css
 使用说明：ctrl+s保存less文件时，会将目录下所有less文件自动编译为同名的css文件，详细使用方法参见sublime中如何用less实现css预编译
@@ -147,22 +137,24 @@ ctrl+alt+shift+p 新建python模板文件
 使用说明：可以直接调整到caniuse看到当前属性的浏览器支持情况
 
 23.babel
-使用说明：
-支持ES6， React.js, jsx代码高亮，对 JavaScript, jQuery 也有很好的扩展。
+使用说明：支持ES6， React.js, jsx代码高亮，对 JavaScript, jQuery 也有很好的扩展。
 设置：
 打开.js, .jsx 后缀的文件
 打开菜单view->Syntax -> Open all with current extension as... -> Babel -> JavaScript (Babel)，选择babel为默认 javascript 打开syntax
 
-24.格式化代码
+@24.格式化代码
 由于sublime 已经自建了格式化按钮，我们只需为其设置快捷键
 preference  ->  Key Bindings -user -->{ "keys": ["ctrl+alt+f"], "command": "reindent" }
 
+@25.css格式化代码 CSSComb -->选中css代码，ctrl+shift+c
+报错解决：
+preference --> package Settigs --> CSSComb --> setting user --> node 路径
 
 手动安装的插件介绍
 
 注意：手动安装的插件不会自动添加到Package Control.sublime-package文件
 
-1. Compact​Expand​Css
+26. Compact​Expand​Css
 
 下载地址:https://github.com/TooBug/CompactExpandCss
 使用说明：css横竖向排列切换
@@ -170,23 +162,6 @@ preference  ->  Key Bindings -user -->{ "keys": ["ctrl+alt+f"], "command": "rein
 ctrl+alt[横向排列
 ctrl+alt]竖向排列
 
-2. Codelf
-
-下载地址：Codelf for Sublime Text 使用说明：变量命名神器Codelf通过搜索在线开源平台的项目源码帮开发者给变量命名 ，有了它再也不用为了命名而绞尽脑汁了 快捷键：鼠标右键，选择Codelf
-
-待定的插件
-
-sublime git
-
-YUI compress
-
-livestyle
-
-GBKEncoding support 中文支持
-
-php_beautifier
-
-php code sniffer
 
 NO.3 Sublime Text 3 快捷键大全
 
