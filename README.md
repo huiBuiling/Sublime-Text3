@@ -29,8 +29,9 @@
 
 > 常用插件
 
-- [x] Emmet(快速生成html头部信息)
+#### 快速模版...
 
+- [x] Emmet(快速生成html头部信息)
 ```
 1. Ctrl + N，新建一个文档
 2. Ctrl + Shift + P，打开命令模式，再输入 sshtml 进行模糊匹配，将语法切换到html模式
@@ -48,10 +49,67 @@
 
 ```
 
+- [x] sublimeTmpl（按指定快捷键生成模板）
+```
+使用说明：按指定快捷键生成模板。
+快捷键：
+ctrl+alt+h 新建html模板文件
+ctrl+alt+j 新建javascript模板文件
+ctrl+alt+c 新建css模板文件
+ctrl+alt+p 新建php模板文件
+ctrl+alt+r 新建ruby模板文件
+ctrl+alt+shift+p 新建python模板文件
+```
+
+#### css 
+
+- [x] Csscomb(.css 格式化代码)
+```
+选中css代码，ctrl+shift+c
+报错解决：
+preference --> package Settigs --> CSSComb --> setting user --> 修改为当前 NodeJS配置环境路径
+```
+
+- [x] LESS(支持less语法高亮)
+- [x] Less2Css
+```
+使用说明：ctrl+s保存less文件时，会将目录下所有less文件自动编译为同名的css文件，详细使用方法参见sublime中如何用less实现css预编译
+快捷键：ctrl+s
+```
+
+- [x] Compact​Expand​Css
+```
+下载地址:https://github.com/TooBug/CompactExpandCss
+使用说明：css横竖向排列切换
+快捷键：
+ctrl+alt[横向排列
+ctrl+alt]竖向排列
+```
+
+- [x] livestyle（Chrome里修改CSS和sublime同步）
+
+```
+http://livestyle.emmet.io/
+在Chrome里修改CSS，然后相对应的在Sublime里的CSS文件就自动更新了！，更新Sublime里的CSS并保存，打开的网页也会自动更新
+
+chrome 网上应用店：livestyle 安装
+然后选中打开需要实时的 .css 文件
+```
+
+
+
+#### 高亮及代码提示
+
 - [x] BracketHighlighter(可能需翻墙,用来匹配相对的符号，然后高亮显示，比如{ }、[ ]、" "等符号)
 
-- [x] HTML-CSS-JS Prettify(可能需翻墙)
+- [x] SublimeCodeInte（代码提示、补全插件）
+```
+支持 JavaScript、Mason、XBL、XUL、RHTML、SCSS、Python、HTML、Ruby、Python3、XML、Sass、XSLT、Django、HTML5、Perl、CSS、Twig、Less、Smarty、Node.js、Tcl、TemplateToolkit 和 PHP 等语言，是 Sublime Text 自带代码提示功能的很好扩展。
+```
 
+#### 格式化
+
+- [x] HTML-CSS-JS Prettify(可能需翻墙, 但是某些格式可能不是很合适)
 ```
 1. 在编辑器的任意一个html/js/css文件中，右击，出现如下图所示，选择Set Plugin Options。或者 ctrl + shift + h ,出现弹窗确认，出现setting窗口
 2. cmd: where node 查看本地安装的NodeJS配置环境路径
@@ -62,34 +120,45 @@
         "linux": "/usr/bin/nodejs",
         "osx": "/usr/local/bin/node"
     }
-4. ctrl + shift + h
-```
-
-- [x] LESS(支持less语法高亮)
-- [x] Less2Css
-
-```
-使用说明：ctrl+s保存less文件时，会将目录下所有less文件自动编译为同名的css文件，详细使用方法参见sublime中如何用less实现css预编译
-快捷键：ctrl+s
-```
-
-- [x] Csscomb(.css 格式化代码)
-
-```
-选中css代码，ctrl+shift+c
-报错解决：
-preference --> package Settigs --> CSSComb --> setting user --> 修改为当前 NodeJS配置环境路径
 ```
 
 - [x] 格式化代码
-
 ```
 由于sublime 已经自建了格式化按钮，我们只需为其设置快捷键
 preference  ->  Key Bindings -user -->{ "keys": ["ctrl+alt+f"], "command": "reindent" }
 ```
 
-- [x] SideBarEnhancements（右键菜单增强插件）
+- [x] jsfmt（jsx语法代码格式化）
 
+```
+默认是未设置快捷键的，设置快捷键 
+preference  ->  Key Bindings -user --> 
+{"keys":["ctrl+shift+q"],"command":"format_javascript"}
+```
+
+#### js 
+
+- [x] React ES6 Snippets（react, es6 语法提示）
+
+- [x] babel（支持ES6， React.js, jsx代码高亮，对 JavaScript, jQuery 也有很好的扩展）
+```
+打开.js, .jsx 后缀的文件
+view->Syntax -> Open all with current extension as... -> Babel -> JavaScript (Babel)，选择babel为默认 javascript 打开syntax
+```
+
+- [x] DocBlockr(生成js ,php 等语言函数注释,只需要在函数上面输入/** ,然后按tab 就会自动生成注释)
+
+- [x] jQuery(jquery提示)
+
+#### 其他
+
+- [x] 拼写检查
+```
+Preferences > Settings – User，添加以下代码：
+"spell_check": true,
+```
+
+- [x] SideBarEnhancements（右键菜单增强插件）
 ```
 以 diff 形式显示未保存的修改、在文件管理器中显示该文件、复制文件路径、在侧边栏中定位该文件等功能，
 也有基础的诸如新建文件/目录，编辑，打开/运行，显示，
@@ -126,34 +195,7 @@ preference  ->  Key Bindings -user -->{ "keys": ["ctrl+alt+f"], "command": "rein
     ]
 ```
 
-- [x] SublimeCodeInte（代码提示、补全插件）
-
-```
-支持 JavaScript、Mason、XBL、XUL、RHTML、SCSS、Python、HTML、Ruby、Python3、XML、Sass、XSLT、Django、HTML5、Perl、CSS、Twig、Less、Smarty、Node.js、Tcl、TemplateToolkit 和 PHP 等语言，是 Sublime Text 自带代码提示功能的很好扩展。
-```
-
-- [x] 拼写检查
-
-```
-Preferences > Settings – User，添加以下代码：
-"spell_check": true,
-```
-
-- [x] sublimeTmpl（按指定快捷键生成模板）
-
-```
-使用说明：按指定快捷键生成模板。
-快捷键：
-ctrl+alt+h 新建html模板文件
-ctrl+alt+j 新建javascript模板文件
-ctrl+alt+c 新建css模板文件
-ctrl+alt+p 新建php模板文件
-ctrl+alt+r 新建ruby模板文件
-ctrl+alt+shift+p 新建python模板文件
-```
-
 - [x] Terminal （ctrl+shift+T，调出终端直接进入项目所在根目录）
-- 
 ```
 cmder：http://cmder.net/（终端工具）下载安装
 注册到右键菜单：以管理员身份运行终端，执行：Cmder.exe /REGISTER ALL
@@ -178,8 +220,6 @@ cmder：http://cmder.net/（终端工具）下载安装
 使用说明：选中需要批量删除空行的部分，Ctrl + Alt + Backspace，选中部分的所有空行就都被删除了
 快捷键：ctrl+alt+backspace
 ```
-- [x] DocBlockr(生成js ,php 等语言函数注释,只需要在函数上面输入/** ,然后按tab 就会自动生成注释)
-- [x] jQuery(jquery提示)
 
 - [x] @x1. Alignment
 
@@ -230,24 +270,9 @@ cmder：http://cmder.net/（终端工具）下载安装
 
 - [x] Can I Use（直接调整到caniuse看到当前属性的浏览器支持情况）
 
-- [x] babel
 
-```
-使用说明：支持ES6， React.js, jsx代码高亮，对 JavaScript, jQuery 也有很好的扩展。
-设置：
-打开.js, .jsx 后缀的文件
-打开菜单view->Syntax -> Open all with current extension as... -> Babel -> JavaScript (Babel)，选择babel为默认 javascript 打开syntax
-```
 
-- [x] Compact​Expand​Css
 
-```
-下载地址:https://github.com/TooBug/CompactExpandCss
-使用说明：css横竖向排列切换
-快捷键：
-ctrl+alt[横向排列
-ctrl+alt]竖向排列
-```
 
 
 
