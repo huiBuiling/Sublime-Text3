@@ -79,7 +79,8 @@ preference --> package Settigs --> CSSComb --> setting user --> 修改为当前 
 
 - [x] Compact​Expand​Css
 ```
-下载地址:https://github.com/TooBug/CompactExpandCss
+下载地址:https://gist.github.com/vitaLee/2863474
+放在C:\Users\Administrator\AppData\Roaming\Sublime Text 3\Packages\User
 使用说明：css横竖向排列切换
 快捷键：
 ctrl+alt[横向排列
@@ -94,6 +95,27 @@ http://livestyle.emmet.io/
 
 chrome 网上应用店：livestyle 安装
 然后选中打开需要实时的 .css 文件
+```
+
+- [x] autoprefixer（）
+
+```
+https://github.com/sindresorhus/sublime-autoprefixer
+放在C:\Users\Administrator\AppData\Roaming\Sublime Text 3\Packages
+
+Preferences > Key Bindings – User
+{ "keys": ["ctrl+alt+a"], "command": "autoprefixer" }
+设置成功，在css里面写transition:all 2s,会自动编译成 -webkit-transition:all 2s;transition:all 2s
+ 
+Preferences > Package Settings > Autoprefixer > Settings - User
+{
+    "browsers": ["last 2 version", "> 0.1%", "> 5% in US", "ie 6-8","Firefox < 20"]
+}
+transition:all 2s; ctrl+alt+a
+编译后：
+    -webkit-transition:all 2s;
+    -moz-transition:all 2s;
+     transition:all 2s
 ```
 
 
