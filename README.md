@@ -1,86 +1,147 @@
-# Sublime-Text3
-插件总结
-转载自：https://github.com/Jesse121/Sublime_Plugins
+### Sublime-Text3
 
-SublimeText3常用插件及快捷键总结
+##### SublimeText3常用插件及快捷键总结
 
-删除插件，Ctrl+Shift+P调出命令面板，输入remove，调出Remove Package选项并回车，选择要删除的插件即可
-更新插件，upgrade packages，
+> 插件操作
 
-NO.1 下载安装
-点击进入sublime官网,根据自己的电脑系统下载相应的版本
-将下载的压缩包解压后直接放进你要安装的文件夹，双击sublime_text.exe即可运行
+```
+* Ctrl+Shift+P调出命令面板
 
-NO.2 插件安装
-这是今天的重点，在安装插件之前我们需要安装package control组件
+* 首先安装package control组件：
+    1. ctr+`调出console面板（view --> show console），黏贴运行
+    2. import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
+    3. 重启Sublime Text 3，在Perferences->package settings中看到package control这一项，则安装成功
+    
+* 安装插件：Install Package，选择要安装的插件
+* 删除插件：Remove Package，选择要删除的插件
+* 更新插件：upgrade packages，选择要更新的插件
 
-在线安装
-按ctr+`调出console面板,粘贴以下代码（或者SUBLIME TEXT 3面板中的代码）到命令行并回车
+* error:Install Package后Sublime弹出窗口提示-->'There are no packages available for installation'
+出现的原因：可能是IPv6的原因，如果我们的Intent服务提供者（ISP）不支持IPv6就会引发上述错误，
+解决方法一：打开C:\Windows\system32\drivers\etc\hosts文件，增加如下对应关系：50.116.34.243 sublime.wbond.net
+解决方法二：手动安装插件
+    1. 进入sublimetext安装包管理器官网在搜索框里输入你所需要的插件名称
+    2. 进入插件的github页面（点击Details下面的github.com）,点击右侧的clone or download -> Download ZIP
+    3. 将下载的压缩包解压后放在Preferences->Browse Packages（即packages文件夹）里面，并重命名（去掉文件名中的-master）
+    4. 重启Sublimetext3即可安装成功
 
-import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
-重启Sublime Text 3。如果在Perferences->package settings中看到package control这一项，则安装成功。
+```
 
-手动安装
-如果你的电脑没有外网权限(小编就是这样)，那只能手动安装了
-点击Preferences 选择Browse Packages… ，打开其上一级文件夹Data并进入Installed Packages文件夹
-将下载的Package Control.sublime-package文件复制进去，再重启Sublime Text
-安装方法介绍
+> 常用插件
 
-在线安装
-按下Ctrl+Shift+P调出命令面板，输入install选择Install Package 选项并回车，
-再输入你要安装的插件名称(例如sublime tmpl)，然后在列表中选中要安装的插件。
-安装成功后一般在Perferences->package settings中可看到
-有些插件有可能在列表中搜索不到，你可以选择手动安装
-手动安装
-进入sublimetext安装包管理器官网在搜索框里输入你所需要的插件名称
-进入插件的github页面（点击Details下面的github.com）,点击右侧的clone or download -> Download ZIP,将下载的压缩包解压后放在Preferences->Browse Packages（即packages文件夹）里面，并重命名（去掉文件名中的-master）
-重启Sublimetext3即可安装成功
-There are no packages available for installation
+- [x] Emmet(快速生成html头部信息)
 
-现实中没有什么事情总是一帆风顺的，特别是计算机程序，时不时就给你来点意外情况。
-例如在在线安装步骤中选择Install Package后Sublime弹出窗口提示
-There are no packages available for installation
-出现的原因：据说是IPv6的原因，如果我们的Intent服务提供者（ISP）不支持IPv6就会引发上述错误，
-解决方法一： 打开C:\Windows\system32\drivers\etc\hosts文件，增加如下对应关系：50.116.34.243 sublime.wbond.net
-终极解决方法：用手动安装插件
+```
+1. Ctrl + N，新建一个文档
+2. Ctrl + Shift + P，打开命令模式，再输入 sshtml 进行模糊匹配，将语法切换到html模式
+3. 输入  !，再按下 Tab键或者 Ctrl + E ，就能快速打开HTML5的整体结构。
 
-在线安装的插件介绍
+快速html头：!(html:5), html:4s, html:4t, html:xxs
 
-@x1. Alignment
-使用说明：Alignment是一个代码格式化插件，它可以使多行代码中的等号对齐，也可以调整多行代码为一个缩进级别。
-快捷键：ctrl+shift+alt+a
+快速代码：ul#nav>li.itemS*4>a{Item $}
+<ul id="nav">
+	<li class="itemS"><a href="">Item 1</a></li>
+	<li class="itemS"><a href="">Item 2</a></li>
+	<li class="itemS"><a href="">Item 3</a></li>
+	<li class="itemS"><a href="">Item 4</a></li>
+</ul>
 
-2. AutoFileName(文件名自动补全)
+```
 
-@3. BracketHighlighter(需翻墙,用来匹配相对的符号，然后高亮显示，比如{ }、[ ]、" "等符号)
+- [x] BracketHighlighter(可能需翻墙,用来匹配相对的符号，然后高亮显示，比如{ }、[ ]、" "等符号)
 
-4. ConvertToUTF8(自动转为UTF-8编码类型)
+- [x] HTML-CSS-JS Prettify(可能需翻墙)
 
-5. DeleteBlankLines（安装不成功。。。。。。）
-使用说明：选中需要批量删除空行的部分，Ctrl + Alt + Backspace，选中部分的所有空行就都被删除了
-快捷键：ctrl+alt+backspace
+```
+1. 在编辑器的任意一个html/js/css文件中，右击，出现如下图所示，选择Set Plugin Options。或者 ctrl + shift + h ,出现弹窗确认，出现setting窗口
+2. cmd: where node 查看本地安装的NodeJS配置环境路径
+3. setting窗口
+   "node_path":
+    {
+        "windows": "C:/Program Files/nodejs/node.exe",  //修改为当前 NodeJS配置环境路径 eg: D:/toolUs/nodejs/node.exe
+        "linux": "/usr/bin/nodejs",
+        "osx": "/usr/local/bin/node"
+    }
+4. ctrl + shift + h
+```
 
-6. DocBlockr(生成js ,php 等语言函数注释,只需要在函数上面输入/** ,然后按tab 就会自动生成注释)
+- [x] LESS(支持less语法高亮)
+- [x] Less2Css
 
-7. Emmet(快速生成html头部信息 | html:4t, html:4s, html:xs, html:xt, html:xxs, html:5)
-
-8.HTML-CSS-JS Prettify(需翻墙,快速格式化html css js)-->ctrl+shift+h
-
-9. jQuery(jquery提示)
-
-10. LESS(支持less语法高亮)
-
-11. Less2Css
+```
 使用说明：ctrl+s保存less文件时，会将目录下所有less文件自动编译为同名的css文件，详细使用方法参见sublime中如何用less实现css预编译
 快捷键：ctrl+s
+```
 
-12. SideBarEnhancements
-使用说明：SideBarEnhancements 是一款很实用的右键菜单增强插件，有以 diff 形式显示未保存的修改、在文件管理器中显示该文件、复制文件路径、在侧边栏中定位该文件等功能，也有基础的诸如新建文件/目录，编辑，打开/运行，显示，在选择中/上级目录/项目中查找，剪切，复制，粘贴，重命名，删除，刷新等常见功能。
+- [x] Csscomb(.css 格式化代码)
 
-13. SublimeCodeInte
-使用说明：Sublime​Code​Intel 是一个代码提示、补全插件，支持 JavaScript、Mason、XBL、XUL、RHTML、SCSS、Python、HTML、Ruby、Python3、XML、Sass、XSLT、Django、HTML5、Perl、CSS、Twig、Less、Smarty、Node.js、Tcl、TemplateToolkit 和 PHP 等语言，是 Sublime Text 自带代码提示功能的很好扩展。
+```
+选中css代码，ctrl+shift+c
+报错解决：
+preference --> package Settigs --> CSSComb --> setting user --> 修改为当前 NodeJS配置环境路径
+```
 
-14. sublimeTmpl ---------教需要
+- [x] 格式化代码
+
+```
+由于sublime 已经自建了格式化按钮，我们只需为其设置快捷键
+preference  ->  Key Bindings -user -->{ "keys": ["ctrl+alt+f"], "command": "reindent" }
+```
+
+- [x] SideBarEnhancements（右键菜单增强插件）
+
+```
+以 diff 形式显示未保存的修改、在文件管理器中显示该文件、复制文件路径、在侧边栏中定位该文件等功能，
+也有基础的诸如新建文件/目录，编辑，打开/运行，显示，
+在选择中/上级目录/项目中查找，剪切，复制，粘贴，重命名，删除，刷新等常见功能。
+* preferences > package setting > side bar > Key Building-User，
+* 键入以下代码，这里设置按Ctrl+Shift+C复制文件路径，按F1~F5分别在firefox，chrome，IE，safari，opera浏览器预览效果
+* 注意代码中的浏览器路径要以自己电脑里的文件路径为准。
+[
+ 
+    //chrome
+    { "keys": ["f1"], "command": "side_bar_files_open_with",
+            "args": {
+                "paths": [],
+                "application": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+                "extensions":".*"
+            }
+     },
+    //firefox
+    { "keys": ["f2"], "command": "side_bar_files_open_with",
+             "args": {
+                "paths": [],
+                "application": "E:\\软件\\Firefox\\firefox.exe",
+                "extensions":".*" //匹配任何文件类型
+            }
+    },
+    //ie
+     { "keys": ["f3"], "command": "side_bar_files_open_with",
+             "args": {
+                "paths": [],
+                "application": "C:\\Program Files\\Internet Explorer\\iexplore.exe",
+                "extensions":".*"
+            }
+    },
+    ]
+```
+
+- [x] SublimeCodeInte（代码提示、补全插件）
+
+```
+支持 JavaScript、Mason、XBL、XUL、RHTML、SCSS、Python、HTML、Ruby、Python3、XML、Sass、XSLT、Django、HTML5、Perl、CSS、Twig、Less、Smarty、Node.js、Tcl、TemplateToolkit 和 PHP 等语言，是 Sublime Text 自带代码提示功能的很好扩展。
+```
+
+- [x] 拼写检查
+
+```
+Preferences > Settings – User，添加以下代码：
+"spell_check": true,
+```
+
+- [x] sublimeTmpl（按指定快捷键生成模板）
+
+```
 使用说明：按指定快捷键生成模板。
 快捷键：
 ctrl+alt+h 新建html模板文件
@@ -89,18 +150,52 @@ ctrl+alt+c 新建css模板文件
 ctrl+alt+p 新建php模板文件
 ctrl+alt+r 新建ruby模板文件
 ctrl+alt+shift+p 新建python模板文件
+```
 
-15. SublimeLinter
-使用说明：它可以帮你找出错误或编写不规范的代码 需要安装nodejs,jshint
+- [x] Terminal （ctrl+shift+T，调出终端直接进入项目所在根目录）
+- 
+```
+cmder：http://cmder.net/（终端工具）下载安装
+注册到右键菜单：以管理员身份运行终端，执行：Cmder.exe /REGISTER ALL
+记得配置环境变量
+{
+  // window下终端路径
+  "terminal": "D:/tools/cmder/cmder/Cmder.exe",
+  //  window下终端参数
+  "parameters": ["/START", "%CWD%"]
+}
+```
 
-16. SublimeLinter-jshint
-使用说明：对错误的javascript代码在状态栏进行提示，
 
-17. Terminal
-使用说明：调出终端直接进入项目所在根目录，这个插件与gulp配合很好用
-快捷键：ctrl+shift+t
 
-18. View In Browser
+------------------------------------------------------
+
+- [x] AutoFileName(文件名自动补全)
+- [x] ConvertToUTF8(自动转为UTF-8编码类型)
+- [x] DeleteBlankLines
+
+```
+使用说明：选中需要批量删除空行的部分，Ctrl + Alt + Backspace，选中部分的所有空行就都被删除了
+快捷键：ctrl+alt+backspace
+```
+- [x] DocBlockr(生成js ,php 等语言函数注释,只需要在函数上面输入/** ,然后按tab 就会自动生成注释)
+- [x] jQuery(jquery提示)
+
+- [x] @x1. Alignment
+
+```
+使用说明：Alignment是一个代码格式化插件，它可以使多行代码中的等号对齐，也可以调整多行代码为一个缩进级别。
+快捷键：ctrl+shift+alt+a
+```
+
+- [x] SublimeLinter（它可以帮你找出错误或编写不规范的代码 需要安装nodejs,jshint）
+- [x] SublimeLinter-jshint（对错误的javascript代码在状态栏进行提示）
+- [x] MarkdownEditing（支持Markdown语法高亮显示）
+- [x] OmniMarkupPreviewer（用来在浏览器中预览markdown 编辑的效果 快捷键：ctrl+alt+o）
+
+- [x] View In Browser
+
+```
 使用说明：sublime以本地服务器方式打开网页 为了使用插件，你需要建立一个sublime-project文件，点击Project->Edit Project 粘贴以下代码(这是我的相关配置),并保存到user目录下
 
 {
@@ -121,52 +216,46 @@ ctrl+alt+shift+p 新建python模板文件
 }
 
 快捷键：ctrl+alt+v
+```
 
-19. MarkdownEditing
-使用说明：它支持Markdown语法高亮显示。
 
-20. OmniMarkupPreviewer
-使用说明：用来在浏览器中预览markdown 编辑的效果 快捷键：ctrl+alt+o
+- [x] ColorPicker 
 
-21. ColorPicker 
+```
 使用说明：获取颜色，即打开调色板 快捷键都是ctrl+shift+c
 但是有时会和ConvertToUTF8冲突
 打开Sublime Text --> Preferences --> Browse Packages，找到其中想要修改快捷键的文件夹并进入，找到对应操作系统的Default.sublime-keymap文件，修改快捷键
+```
 
-22. Can I Use
-使用说明：可以直接调整到caniuse看到当前属性的浏览器支持情况
 
-23.babel
+- [x] Can I Use（直接调整到caniuse看到当前属性的浏览器支持情况）
+
+- [x] babel
+
+```
 使用说明：支持ES6， React.js, jsx代码高亮，对 JavaScript, jQuery 也有很好的扩展。
 设置：
 打开.js, .jsx 后缀的文件
 打开菜单view->Syntax -> Open all with current extension as... -> Babel -> JavaScript (Babel)，选择babel为默认 javascript 打开syntax
+```
 
-@24.格式化代码
-由于sublime 已经自建了格式化按钮，我们只需为其设置快捷键
-preference  ->  Key Bindings -user -->{ "keys": ["ctrl+alt+f"], "command": "reindent" }
+- [x] Compact​Expand​Css
 
-@25.css格式化代码 CSSComb -->选中css代码，ctrl+shift+c
-报错解决：
-preference --> package Settigs --> CSSComb --> setting user --> node 路径
-
-手动安装的插件介绍
-
-注意：手动安装的插件不会自动添加到Package Control.sublime-package文件
-
-26. Compact​Expand​Css
-
+```
 下载地址:https://github.com/TooBug/CompactExpandCss
 使用说明：css横竖向排列切换
 快捷键：
 ctrl+alt[横向排列
 ctrl+alt]竖向排列
+```
 
 
-NO.3 Sublime Text 3 快捷键大全
 
-选择类
+> Sublime Text 3 快捷键大全
 
+- [x] 选择类
+
+```
 Ctrl+D 选中光标所占的文本，继续操作则会选中下一个相同的文本。
 
 Alt+F3 选中文本按下快捷键，即可一次性选择全部的相同文本进行同时编辑。
@@ -212,9 +301,13 @@ Ctrl+Shift+↓ 将光标所在行和下一行代码互换（将光标所在行�
 Ctrl+Alt+↑ 向上添加多行光标，可同时编辑多行。
 
 Ctrl+Alt+↓ 向下添加多行光标，可同时编辑多行。
+```
 
-编辑类
 
+- [x] 编辑类
+
+
+```
 Ctrl+J 合并选中的多行代码为一行。举个栗子：将多行格式的CSS属性合并为一行。
 
 Ctrl+Shift+D 复制光标所在整行，插入到下一行。
@@ -246,9 +339,12 @@ Ctrl+F2 设置书签
 Ctrl+T 左右字母互换。
 
 F6 单词检测拼写
+```
 
-搜索类
+- [x] 搜索类
 
+
+```
 Ctrl+F 打开底部搜索框，查找关键字。
 
 Ctrl+shift+F 在文件夹内查找
@@ -264,9 +360,13 @@ Ctrl+： 打开搜索框，自动带#，输入关键字，查找文件中的变�
 Ctrl+Shift+P 打开命令框。
 
 Esc 退出光标多行选择，退出搜索框，命令框等。
+```
 
-显示类
 
+- [x] 显示类
+
+
+```
 Ctrl+Tab 按文件浏览过的顺序，切换当前窗口的标签页。
 
 Ctrl+PageDown 向左切换当前窗口的标签页。
@@ -292,6 +392,4 @@ Ctrl+K+B 开启/关闭侧边栏。
 F11：全屏模式
 
 Shift+F11 免打扰模式
-Contact GitHub API Training Shop Blog About
-© 2017 GitHub, Inc. Terms Privacy Security Status Help
- You signed in with another tab or window. Reload to refresh your session.
+```
